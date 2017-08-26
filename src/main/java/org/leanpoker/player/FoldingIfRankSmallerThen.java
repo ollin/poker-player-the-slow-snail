@@ -8,6 +8,7 @@ public class FoldingIfRankSmallerThen implements Folding {
         this.min = min;
     }
 
+    @Override
     public boolean fold(Tournament tournament) {
         return new HandEval(tournament.myCards()).getHandValue() < min;
     }
