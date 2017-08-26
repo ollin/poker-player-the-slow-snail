@@ -3,7 +3,6 @@ package org.leanpoker.player;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import static org.leanpoker.player.Player.betRequest;
 
 
 public class PlayerTest {
@@ -12,10 +11,12 @@ public class PlayerTest {
     public void
     should_return_number() throws Exception {
         // given
+        Tournament tournament = new Tournament();
 
+        tournament.setRound(3);
 
         // when
-        int bed = betRequest(null);
+        int bed = new Player().betRequest(tournament);
 
         // then
         assertTrue(bed > 0);

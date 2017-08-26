@@ -6,12 +6,12 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "Default Java folding player";
+    static final String VERSION = "3";
 
-    public static int betRequest(JsonElement request) {
+    public int betRequest(Tournament tournament) {
         return 1000;
     }
 
-    public static void showdown(JsonElement game) {
+    public void showdown(JsonElement game) {
     }
 }
