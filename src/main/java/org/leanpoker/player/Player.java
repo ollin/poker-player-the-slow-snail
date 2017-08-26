@@ -14,7 +14,7 @@ public class Player {
                 new FoldingIfRankSmallerThen(11),
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
-                        new FoldingIfMinRiseIsBiggerThan(100),
+                        //new FoldingIfMinRiseIsBiggerThan(100),
                         new FoldingIfMyBedIsBigger(600))
                 ).fold(tournament)){
             return 0;
