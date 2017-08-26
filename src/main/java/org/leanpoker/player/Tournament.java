@@ -6,6 +6,7 @@ public class Tournament {
 
     private int round;
     private int pot;
+    private int minimum_raise;
     private List<PlayerState> players;
 
     public Tournament() {
@@ -34,4 +35,18 @@ public class Tournament {
     public void setPlayers(List<PlayerState> players) {
         this.players = players;
     }
+
+    public int getMinimum_raise() {
+        return minimum_raise;
+    }
+
+    public void setMinimum_raise(int minimum_raise) {
+        this.minimum_raise = minimum_raise;
+    }
+
+    public int minimum_rise() {
+        return this.pot + this.minimum_raise;
+    }
+
+
 }
