@@ -16,7 +16,7 @@ public class Player {
             return 0;
         }
 
-        int ourBed = new StrategyValue(100).nextBed(tournament);
+        int ourBed = new StrategyValue(0).nextBed(tournament);
 
         System.out.println("we are playing: " + ourBed);
 
