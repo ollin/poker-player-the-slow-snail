@@ -12,11 +12,11 @@ public class Player {
 
         // if rank <= 100 max_bet 100
 
-        if (new FoldingIfRankSmallerThen(10).fold(tournament)){
+        if (new FoldingS1().fold(tournament)){
             return 0;
         }
 
-        int ourBed = new StrategyStaying().nextBed(tournament);
+        int ourBed = new StrategyValue(100).nextBed(tournament);
 
         System.out.println("we are playing: " + ourBed);
 
