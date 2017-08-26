@@ -15,12 +15,12 @@ public class Player {
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
                         //new FoldingIfMinRiseIsBiggerThan(100),
-                        new FoldingIfMyBedIsBigger(600))
+                        new FoldingIfMyBedIsBigger(700))
                 ).fold(tournament)){
             return 0;
         }
 
-        return new StrategyCurrentByInMinimumRise().nextBed(tournament);
+        return 100; //new StrategyCurrentByInMinimumRise().nextBed(tournament);
     }
 
     public void showdown(JsonElement game) {
