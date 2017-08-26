@@ -11,7 +11,7 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new StrategyFoldIfRankSmallerThen(20).fold(tournament)) {
+        if (new StrategyFoldIfRankSmallerThen(10).fold(tournament)) {
             return 0;
         }
 
