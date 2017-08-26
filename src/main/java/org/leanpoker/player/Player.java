@@ -23,7 +23,12 @@ public class Player {
             return 0;
         }
 
-        return new StrategyCurrentByInMinimumRise().nextBed(tournament);
+        int result = new StrategyCurrentByInMinimumRise().nextBed(tournament);
+        if (result < 0) {
+            return 0;
+        } else {
+            return result;
+        }
     }
 
     public void showdown(JsonElement game) {
