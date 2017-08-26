@@ -27,7 +27,9 @@ public class PlayerServlet extends HttpServlet {
             System.out.println("bet_request");
             System.out.println(gameState);
 
-            resp.getWriter().print(new Player().betRequest(new Gson().fromJson(gameState, Tournament.class)));
+            int bet = new Player().betRequest(new Gson().fromJson(gameState, Tournament.class));
+
+            resp.getWriter().print(bet);
         }
         if (req.getParameter("action").equals("showdown")) {
             String gameState = req.getParameter("game_state");

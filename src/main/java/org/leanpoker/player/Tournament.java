@@ -7,10 +7,22 @@ public class Tournament {
     private int round;
     private int pot;
     private int minimum_raise;
+    private int current_buy_in;
     private List<PlayerState> players;
 
     public Tournament() {
     }
+
+
+
+    //current_buy_in
+    public int minimum_rise() {
+        return this.current_buy_in + this.minimum_raise;
+    }
+
+
+
+
 
     public int getRound() {
         return round;
@@ -44,10 +56,12 @@ public class Tournament {
         this.minimum_raise = minimum_raise;
     }
 
-    //current_buy_in
-    public int minimum_rise() {
-        return this.pot + this.minimum_raise;
+
+    public int getCurrent_buy_in() {
+        return current_buy_in;
     }
 
-
+    public void setCurrent_buy_in(int current_buy_in) {
+        this.current_buy_in = current_buy_in;
+    }
 }
