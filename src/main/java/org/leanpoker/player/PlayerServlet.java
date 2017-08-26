@@ -21,12 +21,19 @@ public class PlayerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getParameter("action").equals("bet_request")) {
+
             String gameState = req.getParameter("game_state");
+
+            System.out.println("bet_request");
+            System.out.println(gameState);
 
             resp.getWriter().print(new Player().betRequest(new Gson().fromJson(gameState, Tournament.class)));
         }
         if (req.getParameter("action").equals("showdown")) {
             String gameState = req.getParameter("game_state");
+
+            System.out.println("showdown");
+            System.out.println(gameState);
 
             new Player().showdown(new JsonParser().parse(gameState));
         }
