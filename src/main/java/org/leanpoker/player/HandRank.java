@@ -7,4 +7,12 @@ public class HandRank {
     public HandRank(int first) {
         this.first = first;
     }
+
+    public HandRank max(HandRank other) {
+        if (this.first >= other.first) {
+            return this;
+        } else {
+            return other;
+        }
+    }
 }

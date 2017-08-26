@@ -1,5 +1,6 @@
 package org.leanpoker.player;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -102,6 +103,10 @@ public class Tournament {
     }
 
     public Hand myHand() {
-        return new Hand(myCards());
+        List<Card> allMyCards = new ArrayList<>();
+        allMyCards.addAll(myCards());
+        allMyCards.addAll(community_cards);
+
+        return new Hand(allMyCards);
     }
 }
