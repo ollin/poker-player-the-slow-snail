@@ -8,4 +8,9 @@ public class Card {
     // TODO Integer
     public String rank; // Rank of the card. Possible values are numbers 2-10 and J,Q,K,A
     public String suit;  // Suit of the card. Possible values are: clubs,spades,hearts,diamonds
+
+    // TODO @ollin
+    public int getRank() {
+        return 10;
+    }
 }
