@@ -8,4 +8,5 @@ const gameUrl = 'http://lumber.leanpoker.org/logs/tournament/599b4b5f80425000040
 axios.get(gameUrl)
   .then(({ data }) => data)
   .then(html => html.split('<a href="').pop().split('">').shift())
-  .then(url => baseUrl+console.log)
+  .then(url => baseUrl+url)
+  .then(console.log)
