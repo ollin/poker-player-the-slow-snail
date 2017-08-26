@@ -12,6 +12,8 @@ public class PlayerTest {
     should_return_number() throws Exception {
         // given
         Tournament tournament = new Tournament();
+        tournament.setMinimum_raise(10);
+        tournament.setCurrent_buy_in(100);
 
         tournament.setRound(3);
 
