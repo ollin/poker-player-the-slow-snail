@@ -10,7 +10,8 @@ public class Player {
     static final String VERSION = new Date().toString();
 
     public int betRequest(Tournament tournament) {
-        return new Tournament().minimum_rise();
+
+        return new StrategyCurrentByInMinimumRise().nextBed(tournament);
     }
 
     public void showdown(JsonElement game) {

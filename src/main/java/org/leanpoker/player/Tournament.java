@@ -13,17 +13,6 @@ public class Tournament {
     public Tournament() {
     }
 
-
-
-    //current_buy_in
-    public int minimum_rise() {
-        return this.current_buy_in + this.minimum_raise;
-    }
-
-
-
-
-
     public int getRound() {
         return round;
     }
