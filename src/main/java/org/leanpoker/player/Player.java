@@ -10,7 +10,7 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new FoldingIfRankSmallerThen(10).fold(tournament) ||
+        if (new FoldingIfRankSmallerThen(15).fold(tournament) ||
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
                         new Folding() {
