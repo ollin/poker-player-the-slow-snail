@@ -37,7 +37,7 @@ public class Card {
             case "K":
                 return 13;
             case "A":
-                return 14;
+                return 15;
 
         }
         return 1;

@@ -10,6 +10,8 @@ public class Player {
     static final String VERSION = new Date().toString();
 
     public int betRequest(Tournament tournament) {
+//        new HandEval(myCards)
+        //TODO @coline
         return new StrategyCurrentByInMinimumRise().nextBed(tournament);
     }
 

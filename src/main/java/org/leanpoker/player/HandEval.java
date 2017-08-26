@@ -5,10 +5,19 @@ package org.leanpoker.player;
  */
 public class HandEval {
 
+    private final Card a;
+    private final Card b;
+
+    public HandEval(Card a, Card b) {
+        this.a = a;
+        this.b = b;
+    }
+
     private int handValue = 0;
 
-    public int function(Card a, Card b) {
-        this.handValue = a.getRank() + b.getRank();
+    // @TODO ollin eval hand
+    public int getHandValue() {
+        this.handValue = this.a.getRank() + this.b.getRank();
 
         return this.handValue;
     }
