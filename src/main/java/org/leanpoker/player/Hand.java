@@ -1,5 +1,6 @@
 package org.leanpoker.player;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,6 +21,10 @@ public class Hand {
             result = result.max(new HandRank(1));
         }
 
+        if (isTwoTwo()) {
+            result = result.max(new HandRank(2));
+        }
+
         if (isThree()) {
             result = result.max(new HandRank(3));
         }
@@ -36,7 +41,15 @@ public class Hand {
     }
 
     public boolean isTwoTwo() {
-        return false;
+        int numberOfPairs = 0;
+        Collection<Integer> numberOfRanks = ranks.values();
+        for (Integer numberOfRank : numberOfRanks) {
+            if (numberOfRank == 2) {
+                numberOfPairs++;
+            }
+        }
+
+        return numberOfPairs == 2;
     }
 
     private static HashMap<Integer, Integer> convertToRanks(List<Card> cards) {

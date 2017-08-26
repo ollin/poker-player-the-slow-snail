@@ -10,17 +10,13 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new FoldingOr(
-                new FoldingIfRankSmallerThen(11),
-                new FoldingAnd(
-                        new FoldingIfRankSmallerThen(20),
-                        //new FoldingIfMinRiseIsBiggerThan(100),
-                        new FoldingIfMyBedIsBigger(700))
-                ).fold(tournament)){
+        // if rank <= 100 max_bet 100
+
+        if (new FoldingIfRankSmallerThen(10).fold(tournament)){
             return 0;
         }
 
-        int ourBed = new StrategyCurrentByInMinimumRise().nextBed(tournament);
+        int ourBed = new StrategyValue(100).nextBed(tournament);
 
         System.out.println("we are playing: " + ourBed);
 
