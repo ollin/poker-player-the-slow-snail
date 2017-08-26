@@ -48,6 +48,8 @@ dependencies {
     tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
         exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
     }
+
+    testCompile 'junit:junit:4.12'
 }
 
 task stage(dependsOn: [assemble])
