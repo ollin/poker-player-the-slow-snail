@@ -5,9 +5,9 @@ public class FoldingAnd implements Folding{
     private final Folding foldingA;
     private final Folding foldingB;
 
-    public FoldingAnd(Folding foldingA, Folding foldingb) {
+    public FoldingAnd(Folding foldingA, Folding foldingB) {
         this.foldingA = foldingA;
-        this.foldingB = foldingb;
+        this.foldingB = foldingB;
     }
 
 

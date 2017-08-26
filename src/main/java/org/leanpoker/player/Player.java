@@ -24,6 +24,7 @@ public class Player {
         }
 
         int result = new StrategyCurrentByInMinimumRise().nextBed(tournament);
+
         if (result < 0) {
             System.out.println("Found result lower 0: " + result);
             return 0;
