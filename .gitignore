@@ -8,3 +8,5 @@ build
 .idea
 poker-player-java.iml
 /poker-player-the-slow-snail.iml
+
+node_modules
