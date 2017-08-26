@@ -44,6 +44,7 @@ public class Tournament {
         this.minimum_raise = minimum_raise;
     }
 
+    //current_buy_in
     public int minimum_rise() {
         return this.pot + this.minimum_raise;
     }
