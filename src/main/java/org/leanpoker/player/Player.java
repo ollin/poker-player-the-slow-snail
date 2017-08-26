@@ -11,7 +11,7 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new HandEval(tournament.myCards()).getHandValue() < 20) {
+        if (new StrategyFoldIfRankSmallerThen(20).fold(tournament)) {
             return 0;
         }
 
