@@ -16,6 +16,14 @@ public class Tournament {
     public Tournament() {
     }
 
+    int sumOfPlayersBet() {
+        int result = 0;
+        for (PlayerState player : players) {
+            result += player.bet;
+        }
+        return result;
+    }
+
     List<Card> myCards() {
         for (PlayerState player : players) {
             if (player.hasName(MY_NAME)) {

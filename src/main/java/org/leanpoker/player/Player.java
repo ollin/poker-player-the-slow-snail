@@ -3,7 +3,6 @@ package org.leanpoker.player;
 import com.google.gson.JsonElement;
 
 import java.util.Date;
-import java.util.Map;
 
 public class Player {
 
@@ -11,7 +10,7 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new StrategyFoldIfRankSmallerThen(20).fold(tournament)) {
+        if (new FoldingIfRankSmallerThen(10).fold(tournament)) {
             return 0;
         }
 
