@@ -10,8 +10,11 @@ public class Player {
     static final String VERSION = new Date().toString();
 
     public int betRequest(Tournament tournament) {
-//        new HandEval(myCards)
-        //TODO @coline
+
+        if (new HandEval(tournament.myCards()).getHandValue() < 20) {
+            return 0;
+        }
+
         return new StrategyCurrentByInMinimumRise().nextBed(tournament);
     }
 

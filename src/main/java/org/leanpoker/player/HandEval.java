@@ -1,24 +1,19 @@
 package org.leanpoker.player;
 
+import java.util.List;
+
 /**
  * Created by lukasgin on 26/08/2017.
  */
 public class HandEval {
 
-    private final Card a;
-    private final Card b;
+    private final List<Card> cards;
 
-    public HandEval(Card a, Card b) {
-        this.a = a;
-        this.b = b;
+    public HandEval(List<Card> cards) {
+        this.cards = cards;
     }
 
-    private int handValue = 0;
-
-    // @TODO ollin eval hand
     public int getHandValue() {
-        this.handValue = this.a.getRank() + this.b.getRank();
-
-        return this.handValue;
+        return cards.stream().mapToInt(card -> card.getRank()).sum();
     }
 }
