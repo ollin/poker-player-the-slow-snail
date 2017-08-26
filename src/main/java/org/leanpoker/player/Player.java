@@ -13,12 +13,7 @@ public class Player {
         if (new FoldingIfRankSmallerThen(15).fold(tournament) ||
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
-                        new Folding() {
-                            @Override
-                            public boolean fold(Tournament tournament) {
-                                return tournament.myself().bet > 485;
-                            }
-                        }).fold(tournament)
+                        new FoldingIfMyBedIsBigger(485)).fold(tournament)
                 ){
             return 0;
         }
