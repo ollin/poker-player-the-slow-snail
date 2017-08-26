@@ -1,17 +1,18 @@
 package org.leanpoker.player;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class FoldingOr implements Folding{
 
-    private final Folding foldingA;
-    private final Folding foldingB;
+    private final List<Folding> foldings;
 
-    public FoldingOr(Folding foldingA, Folding foldingB) {
-        this.foldingA = foldingA;
-        this.foldingB = foldingB;
+    public FoldingOr(Folding ... foldings) {
+        this.foldings = Arrays.asList(foldings);
     }
 
     @Override
     public boolean fold(Tournament tournament) {
-        return foldingA.fold(tournament) || foldingB.fold(tournament);
+        return foldings.stream().anyMatch(folding -> folding.fold(tournament));
     }
 }
