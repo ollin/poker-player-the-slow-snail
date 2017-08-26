@@ -1,8 +1,11 @@
 package org.leanpoker.player;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Tournament {
+
+    private static final String MY_NAME = "the slow snail";
 
     private int round;
     private int pot;
@@ -13,10 +16,14 @@ public class Tournament {
     public Tournament() {
     }
 
+    List<Card> myCards() {
+        for (PlayerState player : players) {
+            if (player.hasName(MY_NAME)) {
+                return player.getHole_cards();
+            }
+        }
 
-    //current_buy_in
-    public int minimum_rise() {
-        return this.current_buy_in + this.minimum_raise;
+        return Collections.emptyList();
     }
 
 

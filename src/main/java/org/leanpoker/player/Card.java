@@ -1,3 +1,5 @@
+package org.leanpoker.player;
+
 /**
  * Created by lukasgin on 26/08/2017.
  */

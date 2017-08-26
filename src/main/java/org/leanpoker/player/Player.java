@@ -9,7 +9,6 @@ public class Player {
 
     static final String VERSION = new Date().toString();
 
-    // get tournament .players []
     // get my player (filter by name) or by not empty .hole_cards
     // get my hole cards
     //     "hole_cards": [                         // The cards of the player. This is only visible for your own player
