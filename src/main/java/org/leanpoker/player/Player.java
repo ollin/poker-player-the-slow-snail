@@ -10,7 +10,7 @@ public class Player {
     static final String VERSION = new Date().toString();
 
     public int betRequest(Tournament tournament) {
-        return 1000;
+        return new Tournament().minimum_rise();
     }
 
     public void showdown(JsonElement game) {
