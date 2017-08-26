@@ -10,22 +10,15 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new FoldingIfRankSmallerThen(15).fold(tournament) ||
+        if (new FoldingOr(new FoldingIfRankSmallerThen(15),
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
-                        new FoldingIfMyBedIsBigger(485)).fold(tournament)
-                ){
+                        new FoldingIfMyBedIsBigger(485))
+                ).fold(tournament)){
             return 0;
         }
 
-        int result = new StrategyCurrentByInMinimumRise().nextBed(tournament);
-
-        if (result < 0) {
-            System.out.println("Found result lower 0: " + result);
-            return 0;
-        } else {
-            return result;
-        }
+        return new StrategyCurrentByInMinimumRise().nextBed(tournament);
     }
 
     public void showdown(JsonElement game) {
