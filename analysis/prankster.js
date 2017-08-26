@@ -7,11 +7,13 @@ const _ = require('lodash')
 // funkyjokey
 const gameUrl = `http://shielded-bastion-29985.herokuapp.com/action=showdown`
 
+const axiosSucks = ({ data }) => 'ok:' + data
+
 Promise.all(
   _.range(1000)
     .map(
       () => axios.post(gameUrl, {
         game_state: data
-      }).then(({ data }) => 'ok:' + data)
-        .catch(({ data }) => 'err:' + data.split('error-pages').pop()))
+      }).then(axiosSucks)
+        .catch(axiosSucks))
 ).then(console.log)
