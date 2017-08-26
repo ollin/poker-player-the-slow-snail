@@ -1,18 +1,17 @@
 package org.leanpoker.player;
 
-public class FoldingAnd implements Folding{
+public class FoldingOr implements Folding{
 
     private final Folding foldingA;
     private final Folding foldingB;
 
-    public FoldingAnd(Folding foldingA, Folding foldingB) {
+    public FoldingOr(Folding foldingA, Folding foldingB) {
         this.foldingA = foldingA;
         this.foldingB = foldingB;
     }
 
-
     @Override
     public boolean fold(Tournament tournament) {
-        return foldingA.fold(tournament) && foldingB.fold(tournament);
+        return foldingA.fold(tournament) || foldingB.fold(tournament);
     }
 }

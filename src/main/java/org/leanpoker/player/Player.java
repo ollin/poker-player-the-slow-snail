@@ -10,20 +10,22 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new FoldingIfRankSmallerThen(10).fold(tournament) ||
+        if (new FoldingIfRankSmallerThen(15).fold(tournament) ||
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
-                        new Folding() {
-                            @Override
-                            public boolean fold(Tournament tournament) {
-                                return tournament.myself().bet > 485;
-                            }
-                        }).fold(tournament)
+                        new FoldingIfMyBedIsBigger(485)).fold(tournament)
                 ){
             return 0;
         }
 
-        return new StrategyCurrentByInMinimumRise().nextBed(tournament);
+        int result = new StrategyCurrentByInMinimumRise().nextBed(tournament);
+
+        if (result < 0) {
+            System.out.println("Found result lower 0: " + result);
+            return 0;
+        } else {
+            return result;
+        }
     }
 
     public void showdown(JsonElement game) {

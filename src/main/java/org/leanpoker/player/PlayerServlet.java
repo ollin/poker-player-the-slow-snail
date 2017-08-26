@@ -28,6 +28,10 @@ public class PlayerServlet extends HttpServlet {
             System.out.println(gameState);
 
             int bet = new Player().betRequest(new Gson().fromJson(gameState, Tournament.class));
+            if (bet < 0) {
+                System.out.println("Found result lower 0: " + bet);
+                bet = 0;
+            }
 
             resp.getWriter().print(bet);
         }
