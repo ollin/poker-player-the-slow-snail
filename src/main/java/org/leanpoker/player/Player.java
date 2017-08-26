@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "3";
+    static final String VERSION = "4";
 
     public int betRequest(Tournament tournament) {
         return 1000;

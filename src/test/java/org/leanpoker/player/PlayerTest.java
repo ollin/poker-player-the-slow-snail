@@ -22,4 +22,14 @@ public class PlayerTest {
         assertTrue(bed > 0);
     }
 
+    @Test
+    public void
+    should_() throws Exception {
+        // given
+
+        // when
+
+        // then
+    }
+
 }

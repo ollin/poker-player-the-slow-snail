@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 
@@ -43,15 +44,17 @@ public class TournamentTest {
                 "  \"dealer\": 0,\n" +
                 "  \"community_cards\": [],\n" +
                 "  \"current_buy_in\": 0,\n" +
-                "  \"pot\": 0\n" +
+                "  \"pot\": 100\n" +
                 "}\n";
 
         // when
         Tournament tournament = new Gson().fromJson(json, Tournament.class);
-        int round = tournament.getRound();
 
         // then
-        assertThat(round, is(1));
+        assertThat(tournament.getRound(), is(1));
+        assertThat(tournament.getPlayers(), notNullValue());
+        assertThat(tournament.getPot(), is(100));
+
 
     }
 
