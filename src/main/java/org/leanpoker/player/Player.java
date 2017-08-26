@@ -10,7 +10,16 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new FoldingIfRankSmallerThen(20).fold(tournament)) {
+        if (new FoldingIfRankSmallerThen(10).fold(tournament) ||
+                new FoldingAnd(
+                        new FoldingIfRankSmallerThen(20),
+                        new Folding() {
+                            @Override
+                            public boolean fold(Tournament tournament) {
+                                return tournament.myself().bet > 485;
+                            }
+                        }).fold(tournament)
+                ){
             return 0;
         }
 

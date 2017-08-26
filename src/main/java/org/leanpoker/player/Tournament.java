@@ -75,4 +75,14 @@ public class Tournament {
     public void setCurrent_buy_in(int current_buy_in) {
         this.current_buy_in = current_buy_in;
     }
+
+    public PlayerState myself() {
+        for (PlayerState player : players) {
+            if (player.hasName(MY_NAME)) {
+                return player;
+            }
+        }
+
+        throw new IllegalStateException("we are not part of the game");
+    }
 }
