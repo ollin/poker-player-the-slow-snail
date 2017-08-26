@@ -19,7 +19,7 @@ public class Tournament {
     List<Card> myCards() {
         for (PlayerState player : players) {
             if (player.hasName(MY_NAME)) {
-                return player.getHole_cards();
+                return player.hole_cards;
             }
         }
 
