@@ -6,7 +6,8 @@ public class StrategyCurrentByInMinimumRise implements Strategy {
     public int nextBed(Tournament tournament) {
         //players[in_action][bet]
         return tournament.getCurrent_buy_in()
-                - tournament.sumOfPlayersBet()
+                // - tournament.sumOfPlayersBet()
+                - tournament.myBet()
                 + tournament.getMinimum_raise();
     }
 }

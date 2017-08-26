@@ -85,4 +85,8 @@ public class Tournament {
 
         throw new IllegalStateException("we are not part of the game");
     }
+
+    public int myBet() {
+        return myself().bet;
+    }
 }
