@@ -20,12 +20,11 @@ public class Player {
             return 0;
         }
 
-        int shouldPlay = new StrategyCurrentByInMinimumRise().nextBed(tournament);
-        System.out.println("shouldPlay - " + shouldPlay);
+        int ourBed = new StrategyCurrentByInMinimumRise().nextBed(tournament);
 
-        System.out.println("we are playing: " + 100);
+        System.out.println("we are playing: " + ourBed);
 
-        return 100;
+        return ourBed;
     }
 
     public void showdown(JsonElement game) {

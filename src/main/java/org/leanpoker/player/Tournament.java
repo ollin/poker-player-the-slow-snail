@@ -12,6 +12,9 @@ public class Tournament {
     private int minimum_raise;
     private int current_buy_in;
     private List<PlayerState> players;
+    private List<Card> community_cards;
+
+
 
     public Tournament() {
     }
@@ -76,6 +79,14 @@ public class Tournament {
         this.current_buy_in = current_buy_in;
     }
 
+    public List<Card> getCommunity_cards() {
+        return community_cards;
+    }
+
+    public void setCommunity_cards(List<Card> community_cards) {
+        this.community_cards = community_cards;
+    }
+
     public PlayerState myself() {
         for (PlayerState player : players) {
             if (player.hasName(MY_NAME)) {
@@ -88,5 +99,9 @@ public class Tournament {
 
     public int myBet() {
         return myself().bet;
+    }
+
+    public Hand myHand() {
+        return new Hand(myCards());
     }
 }
