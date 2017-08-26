@@ -14,6 +14,14 @@ public class HandEval {
     }
 
     public int getHandValue() {
-        return cards.stream().mapToInt(card -> card.getRank()).sum();
+        int result = cards.stream().mapToInt(card -> card.getRank()).sum();
+        if (pair()) {
+            result += 20;
+        }
+        return result;
+    }
+
+    public boolean pair() {
+        return cards.get(0).getRank() == cards.get(1).getRank();
     }
 }
