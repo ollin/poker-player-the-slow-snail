@@ -10,10 +10,11 @@ public class Player {
 
     public int betRequest(Tournament tournament) {
 
-        if (new FoldingOr(new FoldingIfRankSmallerThen(15),
+        if (new FoldingOr(
+                new FoldingIfRankSmallerThen(11),
                 new FoldingAnd(
                         new FoldingIfRankSmallerThen(20),
-                        new FoldingIfMyBedIsBigger(485))
+                        new FoldingIfMyBedIsBigger(600))
                 ).fold(tournament)){
             return 0;
         }
